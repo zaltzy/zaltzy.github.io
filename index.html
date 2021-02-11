@@ -8,7 +8,7 @@
 <body>
     <div id="myData"></div>
     <script>
-        fetch('people.json')
+        fetch('https://datadashboardapi.health.gov.il/api/queries/_batch')
             .then(function (response) {
                 return response.json();
             })
@@ -22,7 +22,7 @@
             var mainContainer = document.getElementById("myData");
             for (var i = 0; i < data.length; i++) {
                 var div = document.createElement("div");
-                div.innerHTML = 'Name: ' + data[i].firstName + ' ' + data[i].lastName;
+                div.innerHTML = 'Name: ' + data[i].name;
                 mainContainer.appendChild(div);
             }
         }
